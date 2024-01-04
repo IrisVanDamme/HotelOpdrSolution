@@ -8,6 +8,14 @@ namespace HotelOpdrSolution.BL.Model
 {
     public class Address
     {
+        public Address(string street, string houseNr, string zipCode, string city)
+        {
+            Street = street;
+            HouseNr = houseNr;
+            ZipCode = zipCode;
+            City = city;
+        }
+
         public string Street { get; set; }
         public string HouseNr { get; set; }
         public string ZipCode { get; set; }

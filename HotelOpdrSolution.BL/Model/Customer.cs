@@ -8,6 +8,15 @@ namespace HotelOpdrSolution.BL.Model
 {
     public class Customer
     {
+        public Customer(int id, string name, List<Member> members, List<Registration> registrations, ContactInfo contactInfoCustomer)
+        {
+            Id = id;
+            Name = name;
+            Members = members;
+            Registrations = registrations;
+            ContactInfoCustomer = contactInfoCustomer;
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public List<Member> Members { get; set; }

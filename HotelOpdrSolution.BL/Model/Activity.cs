@@ -8,6 +8,15 @@ namespace HotelOpdrSolution.BL.Model
 {
     public class Activity
     {
+        public Activity(int id, DateTime fixture, int nrOfPlaces, Description descriptionActivity, PriceInfo priceInfoActivity)
+        {
+            Id = id;
+            Fixture = fixture;
+            NrOfPlaces = nrOfPlaces;
+            DescriptionActivity = descriptionActivity;
+            PriceInfoActivity = priceInfoActivity;
+        }
+
         public int Id { get; set; }
         public DateTime Fixture { get; set; }
         public int NrOfPlaces { get; set; }
