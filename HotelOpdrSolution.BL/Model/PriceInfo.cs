@@ -8,7 +8,7 @@ namespace HotelOpdrSolution.BL.Model
 {
     public class PriceInfo
     {
-        public PriceInfo(int adultPrice, int childPrice, int discount, int adultAge)
+        public PriceInfo(decimal adultPrice, decimal childPrice, int discount, int adultAge)
         {
             AdultPrice = adultPrice;
             ChildPrice = childPrice;
@@ -16,8 +16,8 @@ namespace HotelOpdrSolution.BL.Model
             AdultAge = adultAge;
         }
 
-        public int AdultPrice { get; set; }
-        public int ChildPrice { get; set; }
+        public Decimal AdultPrice { get; set; }
+        public Decimal ChildPrice { get; set; }
         public int Discount { get; set; }
         public int AdultAge { get; set; }
     }
