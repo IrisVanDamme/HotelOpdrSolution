@@ -15,8 +15,21 @@ namespace HotelOpdrSolution.BL.Model
             AddressInfo = addressInfo;
         }
 
-        public string Email { get; set; }
-        public string Phone { get; set; }
+        private string _email;
+        public string Email { get => _email;
+            set{
+                if (!value.Contains("@"))
+                    throw new ArgumentException("Email moet een \"@\"-karakter bevatten");
+            }
+        }
+        private string _phone;
+        public string Phone { get => _phone;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                    throw new ArgumentException("Telefoonnummer mag niet leeg zijn");
+            }
+        }
         public Address AddressInfo { get; set; }
     }
 }

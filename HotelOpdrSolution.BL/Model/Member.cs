@@ -13,8 +13,22 @@ namespace HotelOpdrSolution.BL.Model
             Name = name;
             Birthday = birthday;
         }
-
-        public string Name { get; set; }
+        private string _name;
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException("Naam mag niet langer zijn dan 500 karakters");
+                }
+                else if (value.Length > 500)
+                {
+                    throw new ArgumentException("Naam mag niet leeg zijn");
+                }
+            }
+        }
         public DateOnly Birthday { get; set; }
     }
 }

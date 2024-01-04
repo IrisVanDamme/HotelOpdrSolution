@@ -52,7 +52,7 @@ namespace HotelOpdrSolution.Tests
         [Fact]
         public void ContactInfo_EmailWithoutAt_ThrowArgumentException()
         {
-            Assert.Throws<ArgumentException>(() => new ContactInfo("iris@hotmail.com", "0487878787", new Address("Gentstraat", "2A", "9000", "Gent")));
+            Assert.Throws<ArgumentException>(() => new ContactInfo("irishotmail.com", "0487878787", new Address("Gentstraat", "2A", "9000", "Gent")));
         }
 
         [Fact]
