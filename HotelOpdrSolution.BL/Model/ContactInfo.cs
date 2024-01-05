@@ -20,6 +20,7 @@ namespace HotelOpdrSolution.BL.Model
             set{
                 if (!value.Contains("@"))
                     throw new ArgumentException("Email moet een \"@\"-karakter bevatten");
+                _email = value;
             }
         }
         private string _phone;
@@ -28,6 +29,7 @@ namespace HotelOpdrSolution.BL.Model
             {
                 if (string.IsNullOrEmpty(value))
                     throw new ArgumentException("Telefoonnummer mag niet leeg zijn");
+                _phone = value;
             }
         }
         public Address AddressInfo { get; set; }

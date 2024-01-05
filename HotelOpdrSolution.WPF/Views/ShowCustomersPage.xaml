@@ -1,0 +1,17 @@
+﻿<Page x:Class="HotelOpdrSolution.WPF.Views.ShowCustomersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:HotelOpdrSolution.WPF.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShowCustomersPage">
+
+    <StackPanel>
+        <Grid>
+            <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="True" />
+        </Grid>
+        <Button Margin="10, 0, 0, 0" Click="ChooseCustomer_ButtonClicked">Choose a customer</Button>
+    </StackPanel>
+</Page>

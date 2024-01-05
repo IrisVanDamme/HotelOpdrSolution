@@ -27,6 +27,7 @@ namespace HotelOpdrSolution.BL.Model
                 {
                     throw new ArgumentException("Naam mag niet leeg zijn");
                 }
+                _name = value;
             }
         }
         public DateOnly Birthday { get; set; }
