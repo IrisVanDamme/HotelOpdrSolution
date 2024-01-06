@@ -33,10 +33,21 @@ namespace HotelOpdrSolution.BL
             return new CustomerListDTO(_currentCustomer.Id, _currentCustomer.Name, _currentCustomer.ContactInfoCustomer.Email, address, _currentCustomer.ContactInfoCustomer.Phone, _currentCustomer.Members.Count());
         }
 
+        public FullCustomerDTO GetCurrentFullCustomerDTO()
+        {
+            return new FullCustomerDTO(_currentCustomer.Id, _currentCustomer.Name, _currentCustomer.ContactInfoCustomer.Email, _currentCustomer.ContactInfoCustomer.Phone, _currentCustomer.ContactInfoCustomer.AddressInfo.Street, _currentCustomer.ContactInfoCustomer.AddressInfo.HouseNr, _currentCustomer.ContactInfoCustomer.AddressInfo.ZipCode, _currentCustomer.ContactInfoCustomer.AddressInfo.City);
+        }
 
         public void setCurrentCustomer(int id)
         {
             _currentCustomer = _customerRepo.GetCustomer(id);
+        }
+        public void updateCustomer(FullCustomerDTO fullCustomerDTO)
+        {
+            Address address = new Address(fullCustomerDTO.Street, fullCustomerDTO.HouseNr, fullCustomerDTO.Zipcode, fullCustomerDTO.City);
+            ContactInfo contactInfo = new ContactInfo(fullCustomerDTO.Email, fullCustomerDTO.Phone, address);
+            Customer updatedCustomer = new Customer(_currentCustomer.Id, fullCustomerDTO.Name, _currentCustomer.Members, _currentCustomer.Registrations, contactInfo);
+
         }
     }
 }

@@ -41,8 +41,15 @@ namespace HotelOpdrSolution.WPF
         private void ShowCustomerPage(object sender, int id)
         {
             _dM.setCurrentCustomer(id);
-            _customerPage = new CustomerPage(_dM.GetCurrentCustomerListDTO());
+            _customerPage = new CustomerPage(_dM.GetCurrentFullCustomerDTO());
             _mainWindow.frame.NavigationService.Navigate(_customerPage);
+            _customerPage.CustomerEdited += EditCustomerAndGoBack;
+        }
+        private void EditCustomerAndGoBack(object sender, FullCustomerDTO fullCustomerDTO)
+        {
+            //_dM.setCurrentCustomer(id);
+            //_customerPage = new CustomerPage(_dM.GetCurrentCustomerListDTO());
+            //_mainWindow.frame.NavigationService.Navigate(_customerPage);
 
         }
     }

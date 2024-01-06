@@ -9,6 +9,7 @@
       Title="ShowCustomersPage">
 
     <StackPanel>
+        <Label>Choose a customer to display/edit the information from.</Label>
         <Grid>
             <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="True" />
         </Grid>

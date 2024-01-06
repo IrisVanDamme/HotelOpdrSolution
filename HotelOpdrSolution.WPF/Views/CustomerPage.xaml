@@ -7,11 +7,25 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CustomerPage">
-
     <StackPanel>
+        <Label>Customer Information</Label>
+        <Label>Select field to edit and comfirm.</Label>
         <Grid>
-            <DataGrid x:Name="customerDataGrid" AutoGenerateColumns="True" />
+            <ListView x:Name="customerListView" Grid.Row="1" HorizontalAlignment="Stretch" SelectionChanged="ListView_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Property" DisplayMemberBinding="{Binding PropertyName}" Width="150"/>
+                        <GridViewColumn Header="Value" DisplayMemberBinding="{Binding PropertyValue}" Width="500"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
+        <StackPanel x:Name="editPropertyStackPanel" Orientation="Horizontal" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10">
+            <Label x:Name="editPropertyLabel" Margin="5"></Label>
+            <TextBox x:Name="editPropertyTextBox" Margin="5" Width="500"/>
+        </StackPanel>
 
+        <Button  x:Name="editPropertyButton" Visibility="Collapsed" Margin="5" Click="EditProperty_ButtonClicked">Edit</Button>
+        <Button x:Name="goBackButton" Margin="5" Click="GoBack_ButtonClicked">Go back</Button>
     </StackPanel>
 </Page>
