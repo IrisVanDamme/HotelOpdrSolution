@@ -127,6 +127,7 @@ namespace HotelOpdrSolution.WPF.Views
 
         private void GoBack_ButtonClicked(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("Not implemented yet.");
             if (_customerEdited)
             {
                 CustomerEdited.Invoke(this, _fullCustomerDTO);
